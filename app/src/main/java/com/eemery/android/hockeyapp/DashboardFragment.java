@@ -39,7 +39,7 @@ public class DashboardFragment extends Fragment implements TeamAdapter.TeamAdapt
         teamsRecyclerView = v.findViewById(R.id.teams_recycler_view);
 
         RecyclerView.LayoutManager teamsLayoutManager =
-                new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
+                new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         teamsRecyclerView.setLayoutManager(teamsLayoutManager);
         teamsRecyclerView.setHasFixedSize(true);
 
