@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.eemery.android.hockeyapp.team.Team_;
+import com.eemery.android.hockeyapp.teamObjects.Team_;
 
 import java.util.List;
 

@@ -1,5 +1,5 @@
 
-package com.eemery.android.hockeyapp.team;
+package com.eemery.android.hockeyapp.teamObjects;
 
 import java.util.HashMap;
 import java.util.List;

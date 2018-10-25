@@ -1,8 +1,6 @@
 package com.eemery.android.hockeyapp;
 
-import com.eemery.android.hockeyapp.team.Team;
-
-import java.util.List;
+import com.eemery.android.hockeyapp.teamObjects.Team;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

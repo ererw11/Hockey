@@ -1,22 +1,22 @@
 
-package com.eemery.android.hockeyapp.team;
+package com.eemery.android.hockeyapp.teamObjects;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Franchise {
+public class Conference {
 
-    private int franchiseId;
-    private String teamName;
+    private int id;
+    private String name;
     private String link;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    public int getFranchiseId() {
-        return franchiseId;
+    public int getId() {
+        return id;
     }
 
-    public String getTeamName() {
-        return teamName;
+    public String getName() {
+        return name;
     }
 
     public String getLink() {
