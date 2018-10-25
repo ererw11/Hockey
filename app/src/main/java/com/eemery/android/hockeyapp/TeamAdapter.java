@@ -52,21 +52,21 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.TeamHolder> {
     public class TeamHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private final TextView teamCityTextView;
         private final TextView teamNameTextView;
-        private final TextView teamConferenceTextView;
+        private final TextView teamDivisionTextView;
 
         TeamHolder(View itemView) {
             super(itemView);
 
-            teamCityTextView = itemView.findViewById(R.id.team_city);
+            teamDivisionTextView = itemView.findViewById(R.id.team_division);
             teamNameTextView = itemView.findViewById(R.id.team_name);
-            teamConferenceTextView = itemView.findViewById(R.id.team_division);
+            teamCityTextView = itemView.findViewById(R.id.team_city);
             itemView.setOnClickListener(this);
         }
 
-        void bindView(String teamLocation, String teamName, String conference) {
+        void bindView(String teamLocation, String teamName, String division) {
             teamCityTextView.setText(teamLocation);
             teamNameTextView.setText(teamName);
-            teamConferenceTextView.setText(conference);
+            teamDivisionTextView.setText(division);
         }
 
         @Override

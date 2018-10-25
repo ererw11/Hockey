@@ -95,7 +95,6 @@ public class DashboardFragment extends Fragment implements TeamAdapter.TeamAdapt
         }
     }
 
-
     @Override
     public void onClick(Team_ team) {
         // Create a toast to test the onClick

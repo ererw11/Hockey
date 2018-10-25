@@ -5,29 +5,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="166dp"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:layout_marginTop="8dp"
+            android:text="@string/teams" />
 
-        <LinearLayout
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/teams_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:scrollbars="horizontal"
+            tools:listitem="@layout/item_view_dashboard_teams" />
 
-            <TextView
-                style="@style/TextAppearance.AppCompat.Title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Teams" />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/teams_recycler_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbars="horizontal"
-                tools:listitem="@layout/item_view_dashboard_teams" />
-
-        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>
