@@ -15,6 +15,7 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.TeamHolder> {
     private final TeamAdapterOnClickHandler mClickHandler;
     private final List<Team_> teamList;
 
+
     public TeamAdapter(List<Team_> teams, TeamAdapterOnClickHandler clickHandler) {
         teamList = teams;
         mClickHandler = clickHandler;
