@@ -1,5 +1,6 @@
 package com.eemery.android.hockeyapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -50,7 +51,10 @@ public class DashboardFragment extends Fragment implements TeamAdapter.TeamAdapt
         teamsRecyclerView = v.findViewById(R.id.teams_recycler_view);
 
         RecyclerView.LayoutManager teamsLayoutManager =
-                new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
+                new LinearLayoutManager(
+                        getContext(),
+                        RecyclerView.HORIZONTAL,
+                        false);
         teamsRecyclerView.setLayoutManager(teamsLayoutManager);
         teamsRecyclerView.setHasFixedSize(true);
 
@@ -89,15 +93,15 @@ public class DashboardFragment extends Fragment implements TeamAdapter.TeamAdapt
         return teamsToSort;
     }
 
-    private void setUpTeamAdapter(List<Team_> teams) {
+    private void setUpTeamAdapter(List<Team_> teamList) {
         if (isAdded()) {
-            teamsRecyclerView.setAdapter(new TeamAdapter(teams, this));
+            teamsRecyclerView.setAdapter(new TeamAdapter(this, teamList));
         }
     }
 
     @Override
     public void onClick(Team_ team) {
-        // Create a toast to test the onClick
-        Toast.makeText(getContext(), team.getTeamName(), Toast.LENGTH_SHORT).show();
+        Intent newIntent = RosterActivity.newRosterIntent(getContext(), team.getId());
+        startActivity(newIntent);
     }
 }

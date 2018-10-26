@@ -1,5 +1,6 @@
 package com.eemery.android.hockeyapp;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,42 +8,46 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.eemery.android.hockeyapp.rosterObjects.Person;
+import com.eemery.android.hockeyapp.rosterObjects.Player;
+import com.eemery.android.hockeyapp.rosterObjects.Roster;
 import com.squareup.picasso.Picasso;
+
+import java.util.List;
 
 public class RosterAdapter extends RecyclerView.Adapter<RosterAdapter.RosterHolder> {
 
-    private final RosterAdapterOnClickHandler mClickHandler;
     private final List<Player> roster;
+    RosterAdapterOnClickHandler mClickHandler;
 
-    RosterAdapter(List<Player> players, RosterAdapterOnClickHandler clickHandler) {
-        roster = players;
-        mClickHandler = clickHandler;
+    public RosterAdapter(RosterAdapterOnClickHandler mClickHandler, List<Player> rosterList) {
+        this.roster = rosterList;
+        this.mClickHandler = mClickHandler;
     }
 
+    @NonNull
     @Override
-    public RosterHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.item_view_player_roster, parent, false);
+    public RosterHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
+        View view = inflater.inflate(R.layout.item_view_player_roster, viewGroup, false);
         return new RosterAdapter.RosterHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(RosterHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RosterHolder rosterHolder, int position) {
         Player player = roster.get(position);
-        String playerId = Integer.toString(player.getPlayerId());
-        String playerName = player.getPlayerFullName();
-        String playerNumber = Integer.toString(player.getPlayerNumber());
-        String playerPosition = player.getPlayerPosition();
-        holder.bindView(playerId, playerName, playerNumber, playerPosition);
+        String playerId = Integer.toString(player.getPerson().getId());
+        String playerName = player.getPerson().getFullName();
+        String playerNumber = player.getJerseyNumber();
+        String playerPosition = player.getPosition().getName();
+        rosterHolder.bindView(playerId, playerName, playerNumber, playerPosition);
     }
 
     @Override
     public int getItemCount() {
-        if (roster == null) {
-            return 0;
-        }
-        return roster.size();
+        return 0;
     }
+
 
     public interface RosterAdapterOnClickHandler {
         void onClick(Player player);
