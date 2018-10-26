@@ -13,5 +13,5 @@ public interface ApiService {
     Call<Team> getTeams();
 
     @GET("teams/{id}/roster")
-    Call<Roster> getRoster(@Path("ID") String teamId);
+    Call<Roster> getRoster(@Path("id") String teamId);
 }

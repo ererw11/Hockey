@@ -16,6 +16,7 @@ import com.eemery.android.hockeyapp.rosterObjects.Roster;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,10 +26,11 @@ public class RosterFragment extends Fragment implements RosterAdapter.RosterAdap
 
     public static final String TAG = RosterFragment.class.getSimpleName();
 
-    private static final String ARG_TEAM_ID =
-            "com.android.stats.team_id";
+    private static final String ARG_TEAM_ID = "com.android.stats.team_id";
 
     private RecyclerView rosterRecyclerView;
+
+    private String teamId;
 
     private ApiService apiService;
 
@@ -50,6 +52,8 @@ public class RosterFragment extends Fragment implements RosterAdapter.RosterAdap
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
         apiService = ApiUtils.getApiService();
+
+        teamId =getArguments().getString(ARG_TEAM_ID);
     }
 
     @Override
@@ -66,7 +70,7 @@ public class RosterFragment extends Fragment implements RosterAdapter.RosterAdap
         rosterRecyclerView.setLayoutManager(rosterLayoutManager);
         rosterRecyclerView.setHasFixedSize(true);
 
-        loadRoster("28");
+        loadRoster(teamId);
 
         return v;
     }
@@ -76,7 +80,7 @@ public class RosterFragment extends Fragment implements RosterAdapter.RosterAdap
             @Override
             public void onResponse(Call<Roster> call, Response<Roster> response) {
                 Log.d(TAG, "Roster " + teamId + " Successful");
-                bindRoster(response.body());
+                bindRoster(Objects.requireNonNull(response.body()));
             }
 
             @Override
