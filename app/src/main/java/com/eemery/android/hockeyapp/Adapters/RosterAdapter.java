@@ -1,4 +1,4 @@
-package com.eemery.android.hockeyapp;
+package com.eemery.android.hockeyapp.Adapters;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,9 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.eemery.android.hockeyapp.rosterObjects.Person;
+import com.eemery.android.hockeyapp.R;
 import com.eemery.android.hockeyapp.rosterObjects.Player;
-import com.eemery.android.hockeyapp.rosterObjects.Roster;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

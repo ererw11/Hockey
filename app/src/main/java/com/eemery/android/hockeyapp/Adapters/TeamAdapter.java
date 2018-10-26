@@ -1,4 +1,4 @@
-package com.eemery.android.hockeyapp;
+package com.eemery.android.hockeyapp.Adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.eemery.android.hockeyapp.R;
 import com.eemery.android.hockeyapp.teamObjects.Team_;
 
 import java.util.List;

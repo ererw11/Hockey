@@ -10,8 +10,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
+import com.eemery.android.hockeyapp.Adapters.TeamAdapter;
+import com.eemery.android.hockeyapp.Network.ApiService;
+import com.eemery.android.hockeyapp.Network.ApiUtils;
 import com.eemery.android.hockeyapp.teamObjects.Team;
 import com.eemery.android.hockeyapp.teamObjects.Team_;
 

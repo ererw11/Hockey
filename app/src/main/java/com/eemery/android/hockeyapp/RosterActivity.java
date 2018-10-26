@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 
+import com.eemery.android.hockeyapp.Utils.SingleFragmentActivity;
+
 public class RosterActivity extends SingleFragmentActivity {
 
     private final static String EXTRA_TEAM_ID =

@@ -1,4 +1,4 @@
-package com.eemery.android.hockeyapp;
+package com.eemery.android.hockeyapp.Network;
 
 import com.eemery.android.hockeyapp.teamObjects.Team;
 import com.eemery.android.hockeyapp.rosterObjects.Roster;

@@ -1,4 +1,4 @@
-package com.eemery.android.hockeyapp;
+package com.eemery.android.hockeyapp.Network;
 
 public class ApiUtils {
 

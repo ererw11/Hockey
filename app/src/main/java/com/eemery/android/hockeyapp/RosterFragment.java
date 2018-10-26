@@ -10,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.eemery.android.hockeyapp.Adapters.RosterAdapter;
+import com.eemery.android.hockeyapp.Network.ApiService;
+import com.eemery.android.hockeyapp.Network.ApiUtils;
 import com.eemery.android.hockeyapp.rosterObjects.Player;
 import com.eemery.android.hockeyapp.rosterObjects.Roster;
 

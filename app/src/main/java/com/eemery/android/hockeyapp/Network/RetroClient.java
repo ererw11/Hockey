@@ -1,4 +1,4 @@
-package com.eemery.android.hockeyapp;
+package com.eemery.android.hockeyapp.Network;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
